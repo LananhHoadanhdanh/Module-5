@@ -1,0 +1,32 @@
+<h1>Calculator</h1>
+<table>
+  <tr>
+    <td>First Operand:</td>
+    <td><input type="text" id="first" [(ngModel)]="first"></td>
+  </tr>
+  <tr>
+    <td>Operator:</td>
+    <td>
+      <select name="operator" id="operator" [(ngModel)]="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Second Operand:</td>
+    <td><input type="text" id="second" [(ngModel)]="second"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button (click)="cal()">Cal</button>
+    </td>
+  </tr>
+  <tr>
+    <td>Result:</td>
+    <td>{{result}}</td>
+  </tr>
+</table>
