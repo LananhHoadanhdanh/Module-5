@@ -4,3 +4,9 @@
 <button (click)="change('orange')">Cam</button>
 
 <h1 [style.color]="rei">Chào cả thế giới</h1>
+
+Red <input type="range" min="0" max="255" [(ngModel)]="red"><br>
+Lime <input type="range" min="0" max="255" [(ngModel)]="lime"><br>
+Blue <input type="range" min="0" max="255" [(ngModel)]="blue"><br>
+
+<h1 style.color="rgb({{red}},{{lime}},{{blue}})">Chào cả thế giới</h1>

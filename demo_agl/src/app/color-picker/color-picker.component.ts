@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ColorPickerComponent implements OnInit {
   rei = "black";
 
+  red = 0;
+  lime = 0;
+  blue = 0;
+
   constructor() { }
 
   ngOnInit(): void {
