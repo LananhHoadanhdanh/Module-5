@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NameCardComponent } from './name-card/name-card.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { NameCardComponent } from './component/name-card/name-card.component';
+import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { RatingBarComponent } from './rating-bar/rating-bar.component';
-import { DemoFormComponent } from './demo-form/demo-form.component';
+import { RatingBarComponent } from './component/rating-bar/rating-bar.component';
+import { DemoFormComponent } from './component/demo-form/demo-form.component';
+import { ProductFormComponent } from './component/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DemoFormComponent } from './demo-form/demo-form.component';
     NameCardComponent,
     ProgressBarComponent,
     RatingBarComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
