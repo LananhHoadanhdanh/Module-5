@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../model/product";
 import {FormControl, FormGroup} from "@angular/forms";
 
@@ -32,13 +32,13 @@ export class ProductFormComponent implements OnInit {
     },
   ];
 
-  addProduct(){
-    this.listProduct.push(this.product.value)
+  constructor() {
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
 
+  addProduct() {
+    this.listProduct.push(this.product.value)
+  }
 }
