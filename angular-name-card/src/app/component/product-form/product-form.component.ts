@@ -33,7 +33,6 @@ export class ProductFormComponent implements OnInit {
   ];
 
   addProduct(){
-    console.log(this.product.value);
     this.listProduct.push(this.product.value)
   }
 
