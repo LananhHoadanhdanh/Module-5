@@ -46,7 +46,7 @@
       <th>ConfirmPassword:</th>
       <td><input type="text" formControlName="confirmPassword"></td>
       <td>
-          <div *ngIf="(user.controls['confirmPassword'].value != user.controls['password'].value)">
+          <div *ngIf="confirmPassword && confirmPassword.touched && (user.controls['confirmPassword'].value != user.controls['password'].value)">
             Xác nhận mật khẩu không đúng!
           </div>
       </td>
