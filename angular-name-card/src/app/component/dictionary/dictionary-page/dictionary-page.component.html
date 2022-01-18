@@ -1,1 +1,13 @@
-<p>dictionary-page works!</p>
+<h1>Từ điển</h1>
+<table>
+  <tr>
+    <td>STT</td>
+    <td>Từ</td>
+    <td>Nghĩa</td>
+  </tr>
+  <tr *ngFor="let word of dictionaries; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <td>{{word.mean}}</td>
+  </tr>
+</table>

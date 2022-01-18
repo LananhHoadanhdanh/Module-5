@@ -1,0 +1,23 @@
+<h1>Thêm nhà mới</h1>
+<form [formGroup]="houseForm" (ngSubmit)="saveHouse()">
+  <table>
+    <tr>
+      <td>Tên nhà: </td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Số phòng tắm: </td>
+      <td><input type="number" formControlName="bathroom"></td>
+    </tr>
+    <tr>
+      <td>Thể loại: </td>
+      <td><select formControlName="bathroom">
+        <option value=""></option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Tạo mới</button></td>
+    </tr>
+  </table>
+</form>

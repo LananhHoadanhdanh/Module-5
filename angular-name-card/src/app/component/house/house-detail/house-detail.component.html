@@ -1,0 +1,27 @@
+<h1>Chi tiết về ngôi nhà</h1>
+<table cellpadding="5">
+  <tr>
+    <th>Name: </th>
+    <td>{{house.name}}</td>
+  </tr>
+  <tr>
+    <th>Bathroom: </th>
+    <td>{{house.bathroom}}</td>
+  </tr>
+  <tr>
+    <th>Category: </th>
+    <td>{{house.category?.name}}</td>
+  </tr>
+  <tr>
+    <th>Description: </th>
+    <td>{{house.category?.description}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button>Delete</button></td>
+  </tr>
+</table>

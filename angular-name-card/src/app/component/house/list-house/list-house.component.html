@@ -1,0 +1,20 @@
+<h4><a routerLink="/houses/create">Thêm nhà mới</a></h4>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Name</th>
+    <th>Bathroom</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let house of houses">
+    <td><a routerLink="detail/{{house.id}}">{{house.name}}</a></td>
+    <td>{{house.bathroom}}</td>
+    <td>{{house.category?.name}}</td>
+    <td>{{house.category?.description}}</td>
+    <td>
+      <a routerLink="update/{{house.id}}">Edit</a>
+    </td>
+  </tr>
+</table>
+

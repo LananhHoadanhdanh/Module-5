@@ -14,11 +14,16 @@ import { TodoComponent } from './component/todo/todo.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import { TimelinesComponent } from './component/timelines/timelines.component';
-import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-playlist.component';
-import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
+import { YoutubePlaylistComponent } from './component/youtube/youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './component/youtube/youtube-player/youtube-player.component';
 import { ProductListComponent } from './component/product/product-list/product-list.component';
 import { ProductCreateComponent } from './component/product/product-create/product-create.component';
 import { DictionaryPageComponent } from './component/dictionary/dictionary-page/dictionary-page.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ListHouseComponent } from './component/house/list-house/list-house.component';
+import { CreateHouseComponent } from './component/house/create-house/create-house.component';
+import { UpdateHouseComponent } from './component/house/update-house/update-house.component';
+import { HouseDetailComponent } from './component/house/house-detail/house-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +41,18 @@ import { DictionaryPageComponent } from './component/dictionary/dictionary-page/
     YoutubePlayerComponent,
     ProductListComponent,
     ProductCreateComponent,
-    DictionaryPageComponent
+    DictionaryPageComponent,
+    ListHouseComponent,
+    CreateHouseComponent,
+    UpdateHouseComponent,
+    HouseDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

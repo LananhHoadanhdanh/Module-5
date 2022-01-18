@@ -1,0 +1,23 @@
+<h1>Sửa thông tin nhà</h1>
+<form [formGroup]="houseForm" (ngSubmit)="updateHouse()">
+  <table>
+    <tr>
+      <td>Tên nhà: </td>
+      <td><input type="text" formControlName="name" value="{{house?.name}}"></td>
+    </tr>
+    <tr>
+      <td>Số phòng tắm: </td>
+      <td><input type="number" formControlName="bathroom" value="{{house?.bathroom}}"></td>
+    </tr>
+    <tr>
+      <td>Thể loại: </td>
+      <td><select formControlName="bathroom">
+        <option value=""></option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Cập nhật</button>  <button (click)="deleteHouse()">Xóa</button></td>
+    </tr>
+  </table>
+</form>
