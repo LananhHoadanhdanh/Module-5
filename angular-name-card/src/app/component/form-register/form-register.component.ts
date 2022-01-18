@@ -18,7 +18,7 @@ export class FormRegisterComponent implements OnInit {
       country: 'Việt Nam',
       age: 20,
       gender: 'female',
-      phone: '0969001996'
+      phone: '+8469001996'
     }
   ]
 

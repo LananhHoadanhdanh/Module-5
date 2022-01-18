@@ -20,13 +20,13 @@
       <td>
           <!--        <div *ngIf="user.controls.email && user.controls.email.invalid && user.controls.email.touched">-->
         <div *ngIf="email && email.invalid && email.touched">
-          Email không hợp lệ
-          <!--          <div *ngIf="email.errors.email">-->
-          <!--            Email không hợp lệ!-->
-          <!--          </div>-->
-          <!--          <div *ngIf="email.errors.required">-->
-          <!--            Không để trống!-->
-          <!--          </div>-->
+<!--          Email không hợp lệ-->
+                    <div *ngIf="email.errors?.['email']">
+                      Email không hợp lệ!
+                    </div>
+                    <div *ngIf="email.errors?.['required']">
+                      Không để trống!
+                    </div>
         </div>
       </td>
     </tr>
