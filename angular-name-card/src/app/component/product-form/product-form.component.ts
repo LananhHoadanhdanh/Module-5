@@ -16,19 +16,19 @@ export class ProductFormComponent implements OnInit {
 
   listProduct: Product[] = [
     {
-      id: "1",
+      id: 1,
       name: "IP12",
-      price: "2000"
+      price: 2000
     },
     {
-      id: "2",
+      id: 2,
       name: "GALAXY",
-      price: "1800"
+      price: 1800
     },
     {
-      id: "3",
+      id: 3,
       name: "NOKIA",
-      price: "1500"
+      price: 1500
     },
   ];
 
