@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Users} from "../../model/users";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -23,16 +23,17 @@ export class FormRegisterComponent implements OnInit {
   ]
 
   user = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    confirmPassword: new FormControl('',[Validators.required, Validators.minLength(6)]),
-    country: new FormControl('',[Validators.required]),
-    age: new FormControl('',[Validators.required, Validators.min(19)]),
-    gender: new FormControl('',[Validators.required]),
-    phone: new FormControl('',[Validators.required, Validators.pattern("^\\+84\\d{9,10}$")]),
+    confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    country: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required, Validators.min(19)]),
+    gender: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required, Validators.pattern("^\\+84\\d{9,10}$")]),
   });
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -43,5 +44,29 @@ export class FormRegisterComponent implements OnInit {
 
   get email() {
     return this.user.get('email')
+  }
+
+  get password() {
+    return this.user.get('password')
+  }
+
+  get confirmPassword() {
+    return this.user.get('confirmPassword')
+  }
+
+  get age() {
+    return this.user.get('age')
+  }
+
+  get country() {
+    return this.user.get('country')
+  }
+
+  get gender() {
+    return this.user.get('gender')
+  }
+
+  get phone() {
+    return this.user.get('phone')
   }
 }

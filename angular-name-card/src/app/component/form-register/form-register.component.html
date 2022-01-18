@@ -18,55 +18,97 @@
       <th>Email:</th>
       <td><input type="text" formControlName="email" placeholder="Địa chỉ email"></td>
       <td>
-          <!--        <div *ngIf="user.controls.email && user.controls.email.invalid && user.controls.email.touched">-->
         <div *ngIf="email && email.invalid && email.touched">
-<!--          Email không hợp lệ-->
-                    <div *ngIf="email.errors?.['email']">
-                      Email không hợp lệ!
-                    </div>
-                    <div *ngIf="email.errors?.['required']">
-                      Không để trống!
-                    </div>
+          <div *ngIf="email.errors?.['email']">
+            Email không hợp lệ!
+          </div>
+          <div *ngIf="email.errors?.['required']">
+            Không để trống!
+          </div>
         </div>
       </td>
     </tr>
     <tr>
       <th>Password:</th>
       <td><input type="text" formControlName="password"></td>
-      <td></td>
+      <td>
+        <div *ngIf="password && password.invalid && password.touched">
+          <div *ngIf="password.errors?.['minLength']">
+            Password quá ngắn!
+          </div>
+          <div *ngIf="password.errors?.['required']">
+            Không để trống!
+          </div>
+        </div>
+      </td>
     </tr>
     <tr>
       <th>ConfirmPassword:</th>
       <td><input type="text" formControlName="confirmPassword"></td>
-      <td></td>
+      <td>
+          <div *ngIf="(user.controls['confirmPassword'].value != user.controls['password'].value)">
+            Xác nhận mật khẩu không đúng!
+          </div>
+      </td>
     </tr>
     <tr>
       <th>Country:</th>
       <td><select formControlName="country">
         <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
       </select></td>
-      <td></td>
+      <td>
+        <div *ngIf="country && country.invalid && country.touched">
+          <div *ngIf="country.errors?.['required']">
+            Không để trống!
+          </div>
+        </div>
+      </td>
     </tr>
     <tr>
       <th>Age:</th>
       <td><input type="number" formControlName="age"></td>
-      <td></td>
+      <td>
+        <div *ngIf="age && age.invalid && age.touched">
+          <div *ngIf="age.errors?.['min']">
+            Bạn chưa đủ tuổi!
+          </div>
+          <div *ngIf="age.errors?.['required']">
+            Không để trống!
+          </div>
+        </div>
+      </td>
     </tr>
     <tr>
       <th>Gender:</th>
       <td><input type="radio" formControlName="gender" value="Male"> Nam
         <input type="radio" formControlName="gender" value="Female"> Nữ
       </td>
-      <td></td>
+      <td>
+        <div *ngIf="gender && gender.invalid && gender.touched">
+          <div *ngIf="gender.errors?.['required']">
+            Không để trống!
+          </div>
+        </div>
+      </td>
     </tr>
     <tr>
       <th>Phone:</th>
       <td><input type="text" formControlName="phone"></td>
+      <td>
+        <div *ngIf="phone && phone.invalid && phone.touched">
+          <div *ngIf="phone.errors?.['pattern']">
+            Không đúng định dạng!
+          </div>
+          <div *ngIf="phone.errors?.['required']">
+            Không để trống!
+          </div>
+        </div>
+      </td>
     </tr>
     <tr>
       <th></th>
       <td>
-        <button type="submit" [disabled]="!user.valid">Add</button>
+        <button type="submit" [disabled]="(!user.valid) || (user.controls['confirmPassword'].value != user.controls['password'].value)">Add</button>
       </td>
       <td></td>
     </tr>
