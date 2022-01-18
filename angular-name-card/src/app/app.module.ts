@@ -14,6 +14,8 @@ import { TodoComponent } from './component/todo/todo.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import { TimelinesComponent } from './component/timelines/timelines.component';
+import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TimelinesComponent } from './component/timelines/timelines.component';
     FormRegisterComponent,
     TodoComponent,
     PageNotFoundComponent,
-    TimelinesComponent
+    TimelinesComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent
   ],
   imports: [
     BrowserModule,
