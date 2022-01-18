@@ -18,8 +18,8 @@
       <th>Email:</th>
       <td><input type="text" formControlName="email" placeholder="Địa chỉ email"></td>
       <td>
-        <div *ngIf ="email && email.invalid && (email.dirty || email.touched)">
-          Email lỗi
+        <div *ngIf ="email && email.invalid && email.touched">
+          Email không hợp lệ
 <!--          <div *ngIf="email.errors.email">-->
 <!--            Email không hợp lệ!-->
 <!--          </div>-->

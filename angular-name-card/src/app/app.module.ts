@@ -10,6 +10,7 @@ import { RatingBarComponent } from './component/rating-bar/rating-bar.component'
 import { DemoFormComponent } from './component/demo-form/demo-form.component';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
+import { TodoComponent } from './component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
     RatingBarComponent,
     DemoFormComponent,
     ProductFormComponent,
-    FormRegisterComponent
+    FormRegisterComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
