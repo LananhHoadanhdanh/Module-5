@@ -11,6 +11,9 @@ import { DemoFormComponent } from './component/demo-form/demo-form.component';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
 import { TodoComponent } from './component/todo/todo.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import {RouterModule} from "@angular/router";
+import { TimelinesComponent } from './component/timelines/timelines.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { TodoComponent } from './component/todo/todo.component';
     DemoFormComponent,
     ProductFormComponent,
     FormRegisterComponent,
-    TodoComponent
+    TodoComponent,
+    PageNotFoundComponent,
+    TimelinesComponent
   ],
   imports: [
     BrowserModule,
