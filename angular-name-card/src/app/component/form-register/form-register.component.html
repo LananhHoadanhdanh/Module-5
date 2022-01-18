@@ -18,14 +18,15 @@
       <th>Email:</th>
       <td><input type="text" formControlName="email" placeholder="Địa chỉ email"></td>
       <td>
-        <div *ngIf ="email && email.invalid && email.touched">
+          <!--        <div *ngIf="user.controls.email && user.controls.email.invalid && user.controls.email.touched">-->
+        <div *ngIf="email && email.invalid && email.touched">
           Email không hợp lệ
-<!--          <div *ngIf="email.errors.email">-->
-<!--            Email không hợp lệ!-->
-<!--          </div>-->
-<!--          <div *ngIf="email.errors.required">-->
-<!--            Không để trống!-->
-<!--          </div>-->
+          <!--          <div *ngIf="email.errors.email">-->
+          <!--            Email không hợp lệ!-->
+          <!--          </div>-->
+          <!--          <div *ngIf="email.errors.required">-->
+          <!--            Không để trống!-->
+          <!--          </div>-->
         </div>
       </td>
     </tr>
@@ -41,8 +42,8 @@
     </tr>
     <tr>
       <th>Country:</th>
-      <td><select formControlName="country" >
-          <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+      <td><select formControlName="country">
+        <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
       </select></td>
       <td></td>
     </tr>
@@ -54,7 +55,8 @@
     <tr>
       <th>Gender:</th>
       <td><input type="radio" formControlName="gender" value="Male"> Nam
-          <input type="radio" formControlName="gender" value="Female"> Nữ</td>
+        <input type="radio" formControlName="gender" value="Female"> Nữ
+      </td>
       <td></td>
     </tr>
     <tr>
