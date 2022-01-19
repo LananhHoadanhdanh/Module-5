@@ -11,13 +11,15 @@
     </tr>
     <tr>
       <td>Thể loại: </td>
-      <td><select formControlName="bathroom">
-        <option value=""></option>
+      <td><select formControlName="categoryId">
+<!--        <option [ngValue]="null" disabled>Thể loại</option>-->
+        <option selected="selected" value="{{house?.category?.id}}">{{house?.category?.name}}</option>
+        <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
       </select></td>
     </tr>
     <tr>
       <td></td>
-      <td><button type="submit">Cập nhật</button>  <button (click)="deleteHouse()">Xóa</button></td>
+      <td><button type="submit" style="margin-right: 10px">Cập nhật</button>  <button (click)="deleteHouse()">Xóa</button></td>
     </tr>
   </table>
 </form>

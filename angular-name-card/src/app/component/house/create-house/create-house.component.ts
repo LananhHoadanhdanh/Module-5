@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HouseService} from "../../../service/house.service";
+import {Category} from "../../../model/category";
+import {CategoryService} from "../../../service/category.service";
 
 @Component({
   selector: 'app-create-house',
@@ -10,17 +12,33 @@ import {HouseService} from "../../../service/house.service";
 export class CreateHouseComponent implements OnInit {
   houseForm = new FormGroup({
     name: new FormControl(''),
-    bathroom: new FormControl('')
+    bathroom: new FormControl(''),
+    categoryId: new FormControl(''),
   });
 
-  constructor(private houseService: HouseService) { }
+  categories : Category[] = []
+
+  constructor(private houseService: HouseService,
+              private categoryService: CategoryService) {
+  }
 
   ngOnInit(): void {
+    this.categoryService.getAll().subscribe(res => {
+      this.categories = res
+      console.log(res)
+    })
   }
 
   saveHouse() {
-    const house = this.houseForm.value
+    const house = {
+      name: this.houseForm.value.name,
+      bathroom: this.houseForm.value.bathroom,
+      category: {
+        id: this.houseForm.value.categoryId
+      }
+    }
     console.log(house)
+
     // @ts-ignore
     this.houseService.saveHouse(house).subscribe(() => {
       alert("Thêm thành công!")

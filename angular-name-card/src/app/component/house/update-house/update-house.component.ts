@@ -3,6 +3,8 @@ import {HouseService} from "../../../service/house.service";
 import {House} from "../../../model/house";
 import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {CategoryService} from "../../../service/category.service";
+import {Category} from "../../../model/category";
 
 @Component({
   selector: 'app-update-house',
@@ -13,14 +15,18 @@ export class UpdateHouseComponent implements OnInit {
   // @ts-ignore
   house: House;
 
+  categories : Category[] = []
+
   houseForm = new FormGroup({
     name: new FormControl(''),
-    bathroom: new FormControl('')
+    bathroom: new FormControl(''),
+    categoryId: new FormControl('')
   });
 
   constructor(private houseService: HouseService,
               private activatedRoute: ActivatedRoute,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private categoryService: CategoryService) {
   }
 
 
@@ -33,10 +39,21 @@ export class UpdateHouseComponent implements OnInit {
         this.house = res
       })
     })
+
+    this.categoryService.getAll().subscribe(res => {
+      this.categories = res
+      console.log(res)
+    })
   }
 
   updateHouse() {
-    const house = this.houseForm.value
+    const house = {
+      name: this.houseForm.value.name,
+      bathroom: this.houseForm.value.bathroom,
+      category: {
+        id: this.houseForm.value.categoryId
+      }
+    }
     console.log(house)
     // @ts-ignore
     this.houseService.updateHouse(this.house.id, house).subscribe(() => {

@@ -11,9 +11,11 @@
     </tr>
     <tr>
       <td>Thể loại: </td>
-      <td><select formControlName="bathroom">
-        <option value=""></option>
-      </select></td>
+      <td>
+          <select formControlName="categoryId">
+            <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
+          </select>
+      </td>
     </tr>
     <tr>
       <td></td>
