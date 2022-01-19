@@ -38,6 +38,12 @@ export class UpdateHouseComponent implements OnInit {
       this.houseService.findById(id).subscribe(res => {
         console.log(res)
         this.house = res
+        this.houseForm = new FormGroup({
+          name: new FormControl(res.name),
+          bathroom: new FormControl(res.bathroom),
+          categoryId: new FormControl(res.category?.id)
+        });
+
       })
     })
 

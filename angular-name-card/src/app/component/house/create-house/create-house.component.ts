@@ -14,7 +14,7 @@ export class CreateHouseComponent implements OnInit {
   houseForm = new FormGroup({
     name: new FormControl(''),
     bathroom: new FormControl(''),
-    categoryId: new FormControl(''),
+    categoryId: new FormControl('1'),
   });
 
   categories : Category[] = []
