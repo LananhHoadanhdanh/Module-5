@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HouseService} from "../../../service/house.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {House} from "../../../model/house";
 
 @Component({
@@ -14,7 +14,8 @@ export class HouseDetailComponent implements OnInit {
   house: House;
 
   constructor(private houseService: HouseService,
-              private activatedRoute: ActivatedRoute,) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(param => {
@@ -24,6 +25,14 @@ export class HouseDetailComponent implements OnInit {
         console.log(res)
         this.house = res
       })
+    })
+  }
+
+  deleteHouse() {
+    // @ts-ignore
+    this.houseService.deleteHouse(this.house.id).subscribe(() => {
+      alert("Xóa thành công!")
+      this.router.navigate(["/houses"])
     })
   }
 

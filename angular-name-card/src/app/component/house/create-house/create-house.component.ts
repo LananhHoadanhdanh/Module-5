@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {HouseService} from "../../../service/house.service";
 import {Category} from "../../../model/category";
 import {CategoryService} from "../../../service/category.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-house',
@@ -19,7 +20,8 @@ export class CreateHouseComponent implements OnInit {
   categories : Category[] = []
 
   constructor(private houseService: HouseService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -42,6 +44,7 @@ export class CreateHouseComponent implements OnInit {
     // @ts-ignore
     this.houseService.saveHouse(house).subscribe(() => {
       alert("Thêm thành công!")
+      this.router.navigate(["/houses"])
     })
   }
 }

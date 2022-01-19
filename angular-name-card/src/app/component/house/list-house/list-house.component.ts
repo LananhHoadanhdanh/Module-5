@@ -9,17 +9,7 @@ import {Category} from "../../../model/category";
   styleUrls: ['./list-house.component.css']
 })
 export class ListHouseComponent implements OnInit {
-  houses: House[] = [
-    {
-      id: '',
-      name: '',
-      bathroom: '',
-      category: {
-        id: '',
-        name: ''
-      }
-    }
-  ]
+  houses: House[] = []
 
   constructor(private houseService: HouseService) {
   }

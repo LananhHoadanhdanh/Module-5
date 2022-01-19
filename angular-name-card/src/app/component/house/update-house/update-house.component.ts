@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HouseService} from "../../../service/house.service";
 import {House} from "../../../model/house";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {CategoryService} from "../../../service/category.service";
 import {Category} from "../../../model/category";
@@ -25,8 +25,9 @@ export class UpdateHouseComponent implements OnInit {
 
   constructor(private houseService: HouseService,
               private activatedRoute: ActivatedRoute,
-              private formBuilder: FormBuilder,
-              private categoryService: CategoryService) {
+              // private formBuilder: FormBuilder,
+              private categoryService: CategoryService,
+              private router: Router) {
   }
 
 
@@ -58,6 +59,7 @@ export class UpdateHouseComponent implements OnInit {
     // @ts-ignore
     this.houseService.updateHouse(this.house.id, house).subscribe(() => {
       alert("Cập nhật thành công!")
+      this.router.navigate(["/houses"])
     })
   }
 
@@ -65,6 +67,7 @@ export class UpdateHouseComponent implements OnInit {
     // @ts-ignore
     this.houseService.deleteHouse(this.house.id).subscribe(() => {
       alert("Xóa thành công!")
+      this.router.navigate(["/houses"])
     })
   }
 }

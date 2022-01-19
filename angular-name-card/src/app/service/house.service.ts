@@ -29,7 +29,7 @@ export class HouseService {
     return this.http.put<House>(`${API_URL}/${id}`, house);
   }
 
-  deleteHouse(id: string): Observable<Category> {
+  deleteHouse(id: string) {
     return this.http.delete<House>(`${API_URL}/${id}`);
   }
 }
