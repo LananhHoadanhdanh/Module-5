@@ -44,7 +44,7 @@ export class CreateHouseComponent implements OnInit {
     // @ts-ignore
     this.houseService.saveHouse(house).subscribe(() => {
       alert("Thêm thành công!")
-      this.router.navigate(["/houses"])
+        this.router.navigate(["/houses"])
     })
   }
 }
