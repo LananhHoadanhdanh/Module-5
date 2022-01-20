@@ -36,11 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'houses',
-    children: [
-      { path: '', component: ListHouseComponent },
-      { path: 'create', component: CreateHouseComponent },
-      { path: ':id/update', component: UpdateHouseComponent },
-      { path: ':id', component: HouseDetailComponent },]
+    loadChildren: () => import('./component/house/house.module').then(module => module.HouseModule)
   },
   {path: '**', component: PageNotFoundComponent},  // Wildcard route for a 404 page
 ];

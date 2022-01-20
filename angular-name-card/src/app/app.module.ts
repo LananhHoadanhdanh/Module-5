@@ -24,6 +24,7 @@ import { ListHouseComponent } from './component/house/list-house/list-house.comp
 import { CreateHouseComponent } from './component/house/create-house/create-house.component';
 import { UpdateHouseComponent } from './component/house/update-house/update-house.component';
 import { HouseDetailComponent } from './component/house/house-detail/house-detail.component';
+import {HouseModule} from "./component/house/house.module";
 
 @NgModule({
   declarations: [
@@ -41,18 +42,14 @@ import { HouseDetailComponent } from './component/house/house-detail/house-detai
     YoutubePlayerComponent,
     ProductListComponent,
     ProductCreateComponent,
-    DictionaryPageComponent,
-    ListHouseComponent,
-    CreateHouseComponent,
-    UpdateHouseComponent,
-    HouseDetailComponent,
+    DictionaryPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HouseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
