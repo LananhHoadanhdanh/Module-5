@@ -3,19 +3,15 @@
   <table>
     <tr>
       <td>Tên nhà: </td>
-<!--      <td><input type="text" formControlName="name" value="{{house?.name}}"></td>-->
       <td><input type="text" formControlName="name"></td>
     </tr>
     <tr>
       <td>Số phòng tắm: </td>
-<!--      <td><input type="number" formControlName="bathroom" value="{{house?.bathroom}}"></td>-->
       <td><input type="number" formControlName="bathroom"></td>
     </tr>
     <tr>
       <td>Thể loại: </td>
       <td><select formControlName="categoryId">
-<!--        <option [ngValue]="null" disabled>Thể loại</option>-->
-<!--        <option selected="selected" value="{{house?.category?.id}}">{{house?.category?.name}}</option>-->
         <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
       </select></td>
     </tr>

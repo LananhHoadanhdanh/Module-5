@@ -8,10 +8,6 @@ import {YoutubePlaylistComponent} from "./component/youtube/youtube-playlist/you
 import {YoutubePlayerComponent} from "./component/youtube/youtube-player/youtube-player.component";
 import {ProductListComponent} from "./component/product/product-list/product-list.component";
 import {ProductCreateComponent} from "./component/product/product-create/product-create.component";
-import {ListHouseComponent} from "./component/house/list-house/list-house.component";
-import {CreateHouseComponent} from "./component/house/create-house/create-house.component";
-import {UpdateHouseComponent} from "./component/house/update-house/update-house.component";
-import {HouseDetailComponent} from "./component/house/house-detail/house-detail.component";
 
 const routes: Routes = [
   {path: 'register', component: FormRegisterComponent},
